@@ -58,11 +58,18 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return 'Hello, '.concat(name)
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  swc = false
+  for i in ["q", "w", "r", "t", "y", "p", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m",
+     "Q", "W", "R", "T", "Y", "P", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"]
+    if s[0] == i 
+      swc = true
+    end
+  end
+  return swc
 end
 
 def binary_multiple_of_4? s
