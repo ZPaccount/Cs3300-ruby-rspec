@@ -37,13 +37,14 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  match = false
+  match = false # starts by assuming there is no match
   sumValue = 0
   i = 0
   j = 0
+  # iterates through arr
   while i < arr.length
-    # Sums each value behind index i with index i and checks if it equals n
     while j < i
+      # Sums each value behind index i with index i and checks if it equals n
       if arr[i] + arr[j] == n
         match = true
       end
@@ -62,10 +63,11 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  swc = false
+  swc = false # Starts by assuming false
+  # goes through all consonants both upper and lower
   for i in ["q", "w", "r", "t", "y", "p", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m",
      "Q", "W", "R", "T", "Y", "P", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"]
-    if s[0] == i 
+    if s[0] == i # if anything matches the first letter of the string set to true
       swc = true
     end
   end
@@ -79,19 +81,22 @@ end
 # Part 3
 
 class BookInStock
+  # Creates local variable
   attr_accessor :isbn, :price
+  # Constructor
   def initialize(isbn, price)
-    if isbn == ''
+    if isbn == '' # Checks if it's empty
       raise ArgumentError
     else
       @isbn = isbn.to_s
     end
-    if price <= 0
+    if price <= 0 # Checks if it's above 0
       raise ArgumentError
     else
       @price = price
     end
   end
+  # Create Local Method
   def price_as_string
     return "$%0.2f" % [price]
   end
